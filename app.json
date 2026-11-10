@@ -5,9 +5,29 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "platforms": ["ios", "android", "web"],
-    "android": { "package": "com.example.charitychats" },
-    "ios": { "bundleIdentifier": "com.example.charitychats" },
-    "web": { "bundler": "metro" }
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "android": {
+      "package": "com.example.charitychats",
+      "adaptiveIcon": {
+        "backgroundColor": "#E3F56A"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.example.charitychats"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "splash": {
+      "backgroundColor": "#F1F4F1",
+      "resizeMode": "contain"
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

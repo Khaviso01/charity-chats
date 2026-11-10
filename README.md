@@ -13,19 +13,21 @@ Pixel-faithful React Native (Expo) implementation of the **"Charity App" chat sc
 - Responsive: sizes scale from the 400pt design width via `useScale()`, content is capped at 480pt and centred on tablets / web
 
 ## Tech
-Expo SDK 51 · React Native 0.74 · `expo-linear-gradient` · `@expo/vector-icons` · Outfit font (`@expo-google-fonts/outfit`, closest match to the design's Google Sans) · avatars from DiceBear (emoji fallback if offline)
+Expo SDK 51 · React Native 0.74 · **TypeScript (strict)** · `expo-linear-gradient` · `@expo/vector-icons` · Outfit font (`@expo-google-fonts/outfit`, closest match to the design's Google Sans) · avatars from DiceBear (emoji fallback if offline)
 
 ## Project structure
 ```
-App.js                  entry, loads fonts
+App.tsx                 entry, loads fonts
 src/theme/              colours, fonts, design constants
-src/hooks/useScale.js   responsive scaling helper
-src/data/chats.js       mock data
+src/types/              shared TS types (Contact, RecentChat, GroupChat, PressState)
+src/hooks/useScale.ts   responsive scaling helper
+src/data/chats.ts       typed mock data
 src/components/         Avatar, Badge, Card, IconButton, Header,
                         ContactChip, ContactsRow, SectionLabel,
                         ChatItem, GroupAvatar   (all reusable)
-src/screens/ChatsScreen.js
+src/screens/ChatsScreen.tsx
 ```
+Run `npm run typecheck` to verify types.
 
 ## Run it
 **Prerequisites:** [Node.js 18+](https://nodejs.org), Git, and the **Expo Go** app on your phone (or an Android emulator / iOS simulator).
@@ -51,3 +53,6 @@ Download the `.apk` from the link EAS prints, upload it to Google Drive, set sha
 ## Notes
 - Avatars are stand-ins for the 3D illustrations in the design; replace `image` URLs in `src/data/chats.js` with local assets to match exactly.
 - If Expo Go warns about version mismatch, run `npx expo install --fix`.
+
+## Troubleshooting
+- **EAS build fails with `splashscreen_background not found`:** make sure `expo-splash-screen` is installed (`npx expo install expo-splash-screen`) and `app.json` has the `splash.backgroundColor` entry (already included).
