@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Charity Chats",
+    "slug": "charity-chat-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "platforms": ["ios", "android", "web"],
+    "android": { "package": "com.example.charitychats" },
+    "ios": { "bundleIdentifier": "com.example.charitychats" },
+    "web": { "bundler": "metro" }
+  }
+}
